@@ -13,7 +13,7 @@ let time = 10;
 let timer;
 let lastHole = 0;
 let points = 0;
-let difficulty = "hard";
+let difficulty = "easy";
 
 
 
@@ -255,7 +255,7 @@ function setEventListeners(){
 
   return moles;
 }
-
+setEventListeners();
 /**
 *
 * This function sets the duration of the game. The time limit, in seconds,
