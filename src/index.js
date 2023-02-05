@@ -109,8 +109,7 @@ function gameOver() {
   if(time  > 0){
     timeoutID = showUp();
     return timeoutID;
-  }
-  else{
+  } else {
     let gameStopped = stopGame()
     return gameStopped;
 
@@ -128,7 +127,7 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay()
+  let delay = setDelay("easy"); // TODO: Update so that it uses setDelay() chnaged from (difficulty) to ("easy")
   const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
@@ -150,9 +149,8 @@ function showAndHide(hole, delay){
     // TODO: call the toggleVisibility function so that it removes the 'show' class when the timer times out.
     
     gameOver();
-  }, 
-  delay); // TODO: change the setTimeout delay to the one provided as a parameter
-  return timeoutID;
+    }, delay); // TODO: change the setTimeout delay to the one provided as a parameter
+    return timeoutID;
 }
 
 /**
@@ -167,6 +165,7 @@ function toggleVisibility(hole){
   
   return hole;
 }
+
 
 /**
 *
@@ -238,7 +237,6 @@ function startTimer() {
 function whack() {
   // TODO: Write your code here.
   updateScore();
-
   
 }
 
@@ -248,14 +246,12 @@ function whack() {
 * for an example on how to set event listeners using a for loop.
 */
 function setEventListeners(){
-  // TODO: Write your code here
-  moles.forEach(
-    mole => mole.addEventListener('click', whack)
-  );
-
+  for ( let mole of moles ) {
+    mole.addEventListener('click',whack);
+  }
   return moles;
 }
-setEventListeners();
+//setEventListeners();
 /**
 *
 * This function sets the duration of the game. The time limit, in seconds,
@@ -290,6 +286,13 @@ function playAudio(audioObject) {
 
   audioObject.play();
 }
+
+//function startGame(){
+  // setDuration(10);
+  // showUp();
+  // return "game started";
+//}
+
 
 
 function startGame(){
