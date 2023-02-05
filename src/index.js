@@ -127,8 +127,9 @@ function gameOver() {
 *
 */
 function showUp() {
-  let delay = setDelay("easy"); // TODO: Update so that it uses setDelay() chnaged from (difficulty) to ("easy")
-  const hole = chooseHole(holes);  // TODO: Update so that it use chooseHole()
+  //let delay = setDelay(difficulty); // TODO: Update so that it uses setDelay() chnaged from (difficulty) to ("easy")
+  const hole = chooseHole(holes); 
+  let delay = setDelay(difficulty) // TODO: Update so that it use chooseHole()
   return showAndHide(hole, delay);
 }
 
@@ -234,10 +235,11 @@ function startTimer() {
 * the moles.
 *
 */
+
 function whack() {
-  // TODO: Write your code here.
+  //TODO: Write your code here.
   updateScore();
-  
+  return points;
 }
 
 /**
